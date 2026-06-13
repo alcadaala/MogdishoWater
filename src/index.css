@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    @apply bg-slate-50 text-gray-700 transition-colors duration-200 dark:bg-slate-950 dark:text-slate-100;
+  }
+}
+
+@utility btn-primary {
+  @apply inline-flex items-center gap-2 px-3.5 py-2 bg-[#f97316] hover:bg-[#ea580c] text-white font-medium text-[13px] rounded-md transition-colors;
+}
+
+@utility btn-secondary {
+  @apply inline-flex items-center gap-2 px-3.5 py-2 bg-white hover:bg-gray-50 text-gray-700 font-medium text-[13px] rounded-md border border-gray-200 transition-colors shadow-sm dark:bg-slate-900 dark:border-slate-800 dark:text-slate-300 dark:hover:bg-slate-800/80;
+}
+
+@utility admin-input {
+  @apply px-3 py-2 bg-white border border-gray-200 rounded-md text-[13px] text-gray-700 focus:outline-none focus:border-[#f97316] focus:ring-1 focus:ring-[#f97316] transition-all placeholder-gray-400 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-200 dark:placeholder-slate-600;
+}
+
+@utility badge {
+  @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium border;
+}
+
+@utility badge-active {
+  @apply bg-[#f0fdf4] text-[#166534] border-[#dcfce7] dark:bg-emerald-950/30 dark:text-emerald-400 dark:border-emerald-900/50;
+}
+
+@utility badge-failed {
+  @apply bg-[#fef2f2] text-[#991b1b] border-[#fee2e2] dark:bg-red-950/30 dark:text-red-400 dark:border-red-900/50;
+}
+
+@utility table-th {
+  @apply py-3 px-4 text-left text-[11px] font-semibold text-gray-500 uppercase tracking-wider dark:text-slate-400;
+}
+
+@utility table-td {
+  @apply py-3 px-4 text-[13px] text-gray-700 border-b border-gray-100 dark:text-slate-300 dark:border-slate-800/60;
+}
+
+@utility admin-card {
+  @apply bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-slate-900 dark:border-slate-800;
+}
+
+@utility badge-success {
+  @apply bg-[#f0fdf4] text-[#166534] border-[#dcfce7] dark:bg-emerald-950/30 dark:text-emerald-400 dark:border-emerald-900/50;
+}
+
+@utility badge-warning {
+  @apply bg-[#fffbeb] text-[#854d0e] border-[#fef3c7] dark:bg-amber-950/30 dark:text-amber-400 dark:border-amber-900/50;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@utility animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+@utility animate-fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+@utility animate-scale-in {
+  animation: scaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom Checkbox */
+input[type="checkbox"] {
+  @apply w-4 h-4 rounded border-gray-300 text-[#f97316] focus:ring-[#f97316] cursor-pointer;
+}
